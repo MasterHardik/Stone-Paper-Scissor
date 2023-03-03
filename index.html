@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor game</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- <div class="game-body" id="ele"> -->
+        <div class="score">Player One Score : <div id="player1-score">Not started yet</div></div>
+        
+        <div class="display" id="player1-display">
+            <img src="./Images/paper.png" id="player1-img"> 
+        </div>
+        
+        <div class="display" id="player2-display">
+            <img src="./Images/scissor.png" id="player2-img">     
+        </div>
+
+        <div class="score">Player Two Score : <div id="player2-score">Not started yet</div></div>
+        
+        <div class="choice-rps">
+            <div class="choice" id="rock" >
+                <img src="./Images/stone.png" alt="rock" id="img-choice" onclick="choice(this)">
+            </div>
+            <div class="choice" id="paper" >
+                <img src="./Images/paper.png" alt="paper" id="img-choice" onclick="choice(this)">
+            </div>
+            <div class="choice" id="scissor" >
+                <img src="./Images/scissor.png" alt="scissor" id="img-choice" onclick="choice(this)">
+            </div>
+        </div>
+        <!-- </div> -->
+        <script src="index.js"></script>
+</body>
+</html>

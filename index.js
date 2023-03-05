@@ -1,50 +1,48 @@
-const rps = ["./Images/stone.png", "./Images/paper.png", "./Images/scissor.png"]
-let r = rps[0]
-let p = rps[1]
-let s = rps[2]
+const rps ={ r : "http://127.0.0.1:5500/Images/stone.png",p: "http://127.0.0.1:5500/Images/paper.png",s: "http://127.0.0.1:5500/Images/scissor.png"}
 
 var s1 = 0
 var s2 = 0
 
-let score1 = document.getElementById("player1-score")
-let score2 = document.getElementById("player2-score")
+const score1 = document.getElementById("player1-score")
+const score2 = document.getElementById("player2-score")
 
 
-let playerDisplay1 = document.getElementById("player2-img")
-let playerDisplay2 = document.getElementById("player1-img")
+const p1 = document.getElementById("player1-img")
+const p2 = document.getElementById("player2-img")
 
 setDisplay = ()=>{
-    playerDisplay1.style.display = 'block'
-    playerDisplay2.style.display = 'block' 
+    p1.style.display = 'block'
+    p2.style.display = 'block' 
 }
 
 refresh = (x) => {
-    playerDisplay1.src = x.src
-    let ch = Math.floor(Math.random()*3);
-    playerDisplay2.src = rps[ch]
+    p2.src = x.src
+    let ch = Math.floor(Math.random() * 3);
+    if (ch == 0) {
+        p1.src = rps.r
+    }
+    else p1.src = (ch == 1) ? rps.p : rps.s;
 }
-p1 = playerDisplay1
-p2 = playerDisplay2
 
 updateScore = () => {
-    if (playerDisplay1.src == playerDisplay2.src) {
+    if (p1.src == p2.src) {
         score1.innerText = ++s1
         score2.innerText = ++s2
     }
-    else if (p2 == r && p1 == s || p2 == p && p1 == r || p2 == s && p1 == p) {
-        score1.innerText = ++s1
-        score2.innerText = s2
-    }
-    else {
+    else if (p2.src == rps.r && p1.src == rps.s || p2.src == rps.p && p1.src == rps.r || p2.src == rps.s && p1.src == rps.p) {
         score2.innerText = ++s2
         score1.innerText = s1
+    }
+    else {
+        score1.innerText = ++s1
+        score2.innerText = s2
     }
    
 }
 
 
 choice = (x) => {
-    setDisplay()
+    if (!s1 && !s2) { setDisplay();}
     refresh(x)
     updateScore()
 }

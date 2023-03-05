@@ -2,12 +2,6 @@
     box-sizing: border-box;
 }
 
-/* body{
-    display: flex;
-    flex-wrap: wrap;
-    text-align:center;
-    flex-direction: column;
-} */
 .display{
     border: 1px inset black;
     height: 200px;
@@ -17,13 +11,14 @@
     justify-content: center;
     /* margin: 0 auto; */
     margin :0 auto;
-    
+    background-color: white;
+    box-shadow: 15px 15px 20px rgb(0, 0, 0,0.25),
+    15px -15px 20px rgba(0, 0, 0, 0.1);
 }
 
 .score{
     padding-top: 5px;
     text-align: center;
-    /* border: 1px inset black; */
     height: 50px;
     width: 200px;
     margin: 0 auto;
@@ -34,6 +29,8 @@
     height: 65px;
     width: 200px;
     margin: 0 auto;
+    box-shadow: 15px 15px 20px rgb(0, 0, 0,0.25),
+    15px -15px 20px rgba(0, 0, 0, 0.1);
 }
 
 .choice{
@@ -42,6 +39,8 @@
     height: 63px;
     width: 63px;
     border: 1px inset black;
+    box-shadow: 15px 15px 20px rgb(0, 0, 0,0.25),
+    15px -15px 20px rgba(0, 0, 0, 0.1);
 }
 
 #player1-img{
